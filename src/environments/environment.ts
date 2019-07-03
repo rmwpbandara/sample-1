@@ -14,3 +14,25 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+// Your web app's Firebase configuration
+export const firebaseConfig = {
+  apiKey: "AIzaSyBwMpS61HuWNDBU2BsmXKzXOmI1I2eE9_0",
+  authDomain: "rmwp-bandara.firebaseapp.com",
+  databaseURL: "https://rmwp-bandara.firebaseio.com",
+  projectId: "rmwp-bandara",
+  storageBucket: "rmwp-bandara.appspot.com",
+  messagingSenderId: "667581135809",
+  appId: "1:667581135809:web:c46918c2d11df9d6"
+};
+
+export const snapshotToArray = snapshot =>{
+  let returnArray = [];
+  snapshot.forEach(element => {
+    let item = element.val();
+    item.key = element.key;
+    returnArray.push(item);
+  });
+
+  return returnArray;
+}
